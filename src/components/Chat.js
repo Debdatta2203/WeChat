@@ -56,7 +56,7 @@ const Chat = () => {
     });
 
     return(
-        <div className="ui container">
+        <div className="ui container" style={{height: '300px'}}>
             <div className="ui comments" style={{height: '78vh !important'}}>
                 {renderlist}
             </div>
