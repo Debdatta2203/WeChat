@@ -47,9 +47,17 @@ const Chat = () => {
                             {message.createdOn?.seconds? formatDate(new Date(message.createdOn.seconds * 1000)) : null}
                         </div>
                     </div>
-                    <div className="text">
-                        {message.text}
-                    </div>
+                    {message?.fileName?.length > 0? 
+                        <div className="text">
+                            <a target="__blank" href={message.downloadLink}>
+                                <img src={message.downloadLink} alt="file" style={{height: '80px', objectFit: 'contain'}} />
+                            </a>
+                        </div>
+                        :
+                        <div className="text">
+                            {message.text}
+                        </div>
+                    }
                 </div>
             </div>
         );
@@ -66,34 +74,3 @@ const Chat = () => {
 };
 
 export default Chat;
-
-// import React, { useState, useEffect } from 'react';
-// import { db } from '../firebase';
-
-// const Chat = ({user}) => {
-//     const [ messages, setMessages ] = useState([]);
-
-//     useEffect(() => {
-//         db.collection('messages').orderBy('createdOn').limit(50).onSnapshot(snapShot => {
-//             setMessages(snapShot.docs.map(doc => doc.data()))
-//         });
-//         console.log('message', messages);
-//     }, []);
-
-//     if(user){
-//         return(
-//             <div>
-//                 {messages.map(message => {
-//                     <div>
-//                         {message.text}
-//                     </div>
-//                 })}
-//             </div>
-//         );
-//     }
-//     return(
-//         <div>Login to continue conversation on WeChat.</div>
-//     );
-// };
-
-// export default Chat;
