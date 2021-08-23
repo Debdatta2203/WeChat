@@ -1,3 +1,16 @@
+/* Custom Styles */
+body{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.emoji-mart{
+    position: absolute !important;
+    margin-top: 1px !important;
+    bottom: 100% !important; /* added this attribute */
+    margin-right: 10px !important;
+    left: 50% !important;
+}
+
 /* .sent{
     display: flex !important;
     width: auto !important;
@@ -12,7 +25,7 @@
     background-color: white !important;
     border: 1px solid #e8e9ec !important;
 } */
-.comments{
+/* .comments{
     display: flex;
     flex-direction: column
 }
@@ -46,4 +59,4 @@
 .avatar{
     margin: 0 !important;
     height: 40px !important;
-}
+} */
